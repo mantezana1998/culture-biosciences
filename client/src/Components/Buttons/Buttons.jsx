@@ -1,6 +1,6 @@
 import { Button, Icon } from 'semantic-ui-react';
 
-export default function Buttons(){
+export default function Buttons({data}){
     return(
     <>
         <Button animated='vertical'>
