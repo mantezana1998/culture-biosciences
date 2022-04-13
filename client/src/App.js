@@ -1,5 +1,8 @@
 import './App.css';
 import { useState } from 'react';
+import { Card } from 'semantic-ui-react';
+import Buttons from './Components/Buttons/Buttons';
+import Pagination from './Components/Pagination/Pagination';
 
 function App() {
 
@@ -17,8 +20,21 @@ function App() {
     })
   }
 
+  // useEffect(() => {
+  //   fetchData
+  // }, [])
+
   return (
-    <h1>Foam Take Home Challenge</h1>
+    <>
+      <h1>Foam Take Home Challenge</h1>
+
+        <Card
+          image='https://i.imgur.com/WsX89jL.jpg'
+        />
+        <Buttons />
+
+      <Pagination />
+    </>
   );
 }
 
