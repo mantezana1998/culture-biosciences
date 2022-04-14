@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+app.use('/api/', require('./routes/foamOrNot'));
+
+
 const port = process.env.PORT || 3001;
 
 app.listen(port, function(){
