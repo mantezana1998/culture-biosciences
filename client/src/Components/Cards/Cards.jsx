@@ -1,9 +1,9 @@
 import { Card, Image } from 'semantic-ui-react';
+import Buttons from '../Buttons/Buttons';
 
 export default function Cards({data}){
     return(
         <>
-        <h1>Hello World!</h1>
            {data.map((foam) => {
                 return (
                     <Card>
@@ -11,6 +11,9 @@ export default function Cards({data}){
                         <Card.Content>
                             {foam.lastModified}
                         </Card.Content>
+                        <Card.Description>
+                            <Buttons />
+                        </Card.Description>
                     </Card>
                 )
             })}

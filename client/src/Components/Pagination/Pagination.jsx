@@ -1,23 +1,27 @@
 import React from 'react'
-import { Pagination } from 'semantic-ui-react'
 
-  function PaginationExamplePagination(){
+  function PaginationExamplePagination({ picturesPerPage, totalPictures, paginate }){
 
-    function handlePageChange(data){
-      console.log(data.selected)
+    const pageNumbers = [];
+
+    for(let i = 0; i <= Math.ceil(totalPictures / picturesPerPage); i++){
+      pageNumbers.push(i);
     }
 
     return(
-      <Pagination 
-        boundaryRange={0}
-        defaultActivePage={1}
-        ellipsisItem={null}
-        firstItem={null}
-        lastItem={null}
-        siblingRange={1}
-        totalPages={20}
-        onClick={handlePageChange}
-      />
+    <>
+      <nav>
+        <ul className="pagination">
+        {pageNumbers.map(number => (
+          <li key={number} className="page-item">
+            <a href="!#" className="page-link" onClick={() => paginate(number)}>
+              {number}
+            </a>
+          </li>
+        ))}
+        </ul>
+      </nav>
+    </>
     )
   }
 
