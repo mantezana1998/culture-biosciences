@@ -1,14 +1,19 @@
-import { Card } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 
-export default function Cards({}){
+export default function Cards({data}){
     return(
         <>
         <h1>Hello World!</h1>
-            {/* {data.map((foam) => {
+           {data.map((foam) => {
                 return (
-                    <Card image={data.url}/>
+                    <Card>
+                        <Image src={foam.url}/>
+                        <Card.Content>
+                            {foam.lastModified}
+                        </Card.Content>
+                    </Card>
                 )
-            })} */}
+            })}
         </>
     )
 }
