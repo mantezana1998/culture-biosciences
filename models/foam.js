@@ -6,6 +6,7 @@ const foamOrNot = mongoose.Schema({
 
 const foamSchema = new mongoose.Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
+    date: String,
     foamOrNot: [foamOrNot]
 })
 

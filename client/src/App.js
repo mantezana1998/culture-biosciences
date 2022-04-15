@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Pagination from './Components/Pagination/Pagination';
 import Cards from './Components/Cards/Cards';
+import * as foamApi from './utils/foamApi';
 
 function App() {
 
@@ -33,10 +34,31 @@ function App() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  async function foam(foamId){
+    try{
+      const data = await foamApi.create(foamId);
+    }catch(err){
+      console.log("error at foam function @ app.js")
+    }
+  }
+
+  async function noFoam(foamId){
+    try{
+      const data = await foamApi.deleteFoam(foamId);
+    }catch(err){
+      console.log("error at noFoam function @ app.js")
+    }
+  }
+
   return (
     <>
       <h1>Foam Take Home Challenge</h1>
-      <Cards data={currentPicture}/>
+      <Cards 
+        data={currentPicture}
+        foam={foam}
+        noFoam={noFoam}
+      />
+      
       <Pagination 
         picturesPerPage={picturesPerPage} 
         totalPictures={data.length}
