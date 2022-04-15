@@ -1,21 +1,16 @@
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Segment } from 'semantic-ui-react';
 
-export default function Buttons({data}){
+export default function Buttons(){
     return(
     <>
-        <Button animated='vertical'>
-            <Button.Content hidden>No Foam</Button.Content>
-            <Button.Content visible>
-                <Icon name='circle outline' />
-            </Button.Content>
-        </Button>
-
-        <Button animated='vertical'>
-            <Button.Content hidden>Foam</Button.Content>
-            <Button.Content visible>
-                <Icon name='circle' />
-            </Button.Content>
-        </Button>
+        <Segment>
+            <Button inverted color='green'>
+                Foam
+            </Button>
+            <Button inverted color='red'>
+                Not Foam
+            </Button>
+        </Segment>
     </>
     )
 }

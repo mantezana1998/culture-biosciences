@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+require('dotenv').config();
+
+require('./config/database');
 
 app.use('/api/', require('./routes/foamOrNot'));
 
